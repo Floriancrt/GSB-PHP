@@ -18,29 +18,34 @@
 class Contre_Indications
 {
 
-    private $LibelleContreIndication;
-    private $DescriptionContreIndication;
+    private $libelle;
+    private $description;
 
 
-    public function __construct($LibelleContreIndication,$DescriptionContreIndication)
+    /**
+     * Permet d'instancier une activité complémentaire
+     * @param string $libelle son libellé
+     * @param string $description sa description
+     */
+    public function __construct($libelle,$description)
     {
         
-        $this->libelleContreIndication = $LibelleContreIndication;
-        $this->descriptionContreIndication = $DescriptionContreIndication;
+        $this->libelle = $libelle;
+        $this->description = $description;
 
     }
 
 
-    public function getLibelleContreIndication()
+    public function getLibelle()
     {
 
-        return $this->libelleContreIndication;
+        return $this->libelle;
     }
 
-    public function getDescriptionContreIndication()
+    public function getDescription()
     {
 
-        return $this->descriptionContreIndication;
+        return $this->description;
     }
     
 

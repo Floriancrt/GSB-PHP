@@ -25,6 +25,15 @@ class Personnel
     private $colRegions;
 
 
+    /**
+     * Permet d'instancier un personnel
+     * @param string $id son identifiant
+     * @param string $nom son nom
+     * @param string $prenom son prenom 
+     * @param string $adresse son adresse
+     * @param string $dateEmbauche sa date d'embauche
+     * @param string $colRegions collection de régions
+     */
     public function __contruct($id,$nom,$prenom,$adresse,$dateEmbauche,$colRegions)
     {
         $this->id = $id;

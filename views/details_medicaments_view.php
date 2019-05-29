@@ -79,7 +79,7 @@
               <tbody>
                 <?php foreach($effets as $key =>$value): ?>
                   <tr>
-                    <th scope="row" class="tab_effet"><?php echo $value->getLibelleEffet(); ?></th>
+                    <th scope="row" class="tab_effet"><?php echo $value->getLibelle(); ?></th>
                   </tr>
                 <?php endforeach; ?>
               </tbody>
@@ -112,7 +112,7 @@
               <tbody>
               <?php foreach($contreIndication as $key =>$value): ?>
                 <tr>
-                  <th scope="row" class="tab_effet"><?php echo $value->getLibelleContreIndication(); ?></th>
+                  <th scope="row" class="tab_effet"><?php echo $value->getLibelle(); ?></th>
                 </tr>
               <?php endforeach; ?>
               </tbody>
@@ -146,7 +146,7 @@
               <tbody>
               <?php foreach($composant as $key =>$value): ?>
                 <tr>
-                  <th scope="row" class="tab_effet"><?php echo $value->getLibelleComposant(); ?></th>
+                  <th scope="row" class="tab_effet"><?php echo $value->getLibelle(); ?></th>
                   <th scope="row" class="tab_effet"><?php echo $value->getQuantite(); ?></th>
                 </tr>
               <?php endforeach; ?>

@@ -32,7 +32,7 @@ class Activite
                 $this->date = $args[0];
                 $this->visiteur = $args[1];
                 break;
-            // sélection
+            // sélectioncd
             case 4:
                 $this->id = $args[0];
                 $this->date = $args[1];

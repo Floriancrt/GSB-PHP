@@ -19,15 +19,19 @@ class Composants
 {
 
     
-    private $LibelleComposant;
+    private $libelle;
     private $Quantite;
 
-
-    public function __construct($LibelleComposant,$Quantite)
+    /**
+     * Permet d'instancier un composant
+     * @param string $libelle son libellé
+     * @param string $quantite sa quantité
+     */
+    public function __construct($libelle,$quantite)
     {
 
         
-        $this->LibelleComposant = $LibelleComposant;
+        $this->libelle = $libelle;
         $this->Quantite = $Quantite;
     }
 
@@ -37,17 +41,17 @@ class Composants
     
     public function getQuantite()
     {
-        return $this->Quantite;
+        return $this->quantite;
     }
 
     /**
      * Permet d'obtenir le libellé d'un composant
      */
 
-    public function getLibelleComposant()
+    public function getLibelle()
     {
 
-        return $this->LibelleComposant;
+        return $this->libelle;
     }
 
     
