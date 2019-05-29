@@ -28,6 +28,12 @@
       });
     });
 
+    $(document).ready(function(){
+      $("#btn_ajout_ac").click(function(){
+        $("#Modal-add-AC").modal();
+      });
+    });
+
     $(document).ready(function(){	
 	    $('#logo').fadeIn(3500);
       });
@@ -138,6 +144,27 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="Modal-add-AC" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal Activites Complémentaires-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="modal_title_med">Ajouter une activité</h4>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="aiguillageMedicaments.php">
+            <input class="form-control" type="text" name="nni" placeholder="Salle">
+            <input class="form-control" type="text" name="nni" placeholder="Etat">    
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
     
   <div class="menu"></div>
   <div class="container-accueil">
@@ -150,6 +177,7 @@
     </div>
     <div class="col-lg-4">
         <button class="bouton linear-wipe-activites" id="btn-activites">Activités</button>
+        <button class="btn_AC btn_ajout_ac" id="btn_ajout_ac">Ajouter une activité</button>
     </div>
   </div>
 

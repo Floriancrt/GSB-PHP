@@ -15,61 +15,89 @@
  */
 
 
-class ActivitesC
+class ActivitesC extends Activite
 {
-    private $numero;
-    private $etat;
     private $budget;
+    private $theme;
     private $salle;
-    private $commentaires;
-    private $idActivite;
-    private $id;
-    private $date;
+    private $etat;
+    private $colPraticiens;
 
 
-    public function __construct($Etat,$Budget,$Salle,$Commentaires,$Date)
+    /**
+     * Permet d'instancier une activité complémentaire.
+     */
+    public function __construct()
     {
-        $this->
-        $this->etat = $Etat;
-        $this->budget = $Budget;
-        $this->salle = $Salle;
-        $this->commentaires = $Commentaires;
-        $this->date = $Date;
-        
+        $nbArgs = func_num_args();        
+        $args = func_get_args();
+        switch($nbArgs)
+        {
+            // insertion
+            case 2:
+                parent::__construct($args[0], $args[1]);
+                $this->theme = $args[2];
+                $this->salle = $args[3];
+                break;
+            // sélection
+            case 9:
+                parent::__construct($args[0], $args[1], $args[2], $args[3]);
+                $this->budget = $args[4];
+                $this->theme = $args[5];
+                $this->salle = $args[6];
+                $this->etat = $args[7];
+                $this->colPraticiens = $args[8];
+                break;
+        }
+    }
+    
+    /**
+     * Permet d'obtenir le budget de l'activité complémentaire.
+     * @return string le budget
+     */
+    public function getBudget()
+    { 
+        return $this->budget; 
     }
 
-    public function GetEtat()
+    /**
+     * Permet d'obtenir le thème de l'activité complémentaire.
+     * @return string le thème
+     */
+    public function getTheme()
     {
-        return $this->etat;
+        return $this->theme; 
     }
 
-    public function GetBudget()
+    /**
+     * Permet d'obtenir la salle de l'activité complémentaire.
+     * @return string la salle
+     */
+    public function getSalle()
     {
-        return $this->budget;
-
+        return $this->salle; 
     }
 
-    public function GetSalle()
-    {
-        return $this->salle;
+    /**
+     * Permet d'obtenir l'état de l'activité complémentaire.
+     * @return string l'état
+     */
+    public function getEtat()
+    { 
+        return $this->etat; 
     }
 
-    public function GetCommentaires()
-    {
-        return $this->commentaires;
-
+    /**
+     * Permet d'obtenir les praticiens participant à l'activité complémentaire.
+     * @return array les praticiens
+     */
+    public function getPraticiens()
+    { 
+        return $this->colPraticiens; 
     }
-
-    public function GetDate()
-    {
-        return $this->date;
-    }
-
-
-
-
-
-
 
 
 }
+
+
+
