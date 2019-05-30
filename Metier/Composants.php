@@ -1,6 +1,10 @@
 <?php
 
 
+
+namespace App\Metier;
+
+
 /**
  * 
  * Représente les composants de chaque Médicament

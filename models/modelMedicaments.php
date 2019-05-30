@@ -1,17 +1,18 @@
 <?php
 
-require_once "../Metier/Medicament.php";
+use  App\Metier\Medicament;
+
+namespace App\Models;
 
 
-
-class afficherMedicaments
+class Medicament
 {
 
     /**
      * Permet d'obtenir les médicaments
      * @return array les médicaments
      */
-    function afficherMedicaments()
+    public static function afficherMedicaments()
     {
 
         

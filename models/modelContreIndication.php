@@ -1,5 +1,9 @@
 <?php
 
+
+namespace App\Models;
+
+
 class ContreIndication
 {
 
@@ -8,7 +12,7 @@ class ContreIndication
      * @param string $numero identifiant du médicament
      * @return array les contre-indications
      */
-    function GetContreIndication($numero)
+    public static function GetContreIndication($numero)
     {
 
         $wsdl="http://localhost:8080/WebService1.asmx?WSDL";

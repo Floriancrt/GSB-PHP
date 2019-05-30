@@ -1,5 +1,9 @@
 <?php
 
+
+namespace App\Metier;
+
+
 /**
  * 
  * Représente les activités complémentaires
@@ -21,6 +25,12 @@ class Activite
     private $bilan;
     private $date;
 
+    /**
+     * Permet d'instancier une activité.
+     * @param string $id son identifiant
+     * @param string $bilan son bilan
+     * @param string $date sa date
+     */
     public function __construct()
     {
         $nbArgs = func_num_args();        

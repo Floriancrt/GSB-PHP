@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once "../models/modelMedicaments.php";
+use App\Metier\Medicament;
 
 $medicaments = afficherMedicaments();
 

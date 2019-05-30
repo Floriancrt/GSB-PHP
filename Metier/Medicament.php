@@ -1,6 +1,10 @@
 <?php
 
 
+
+namespace App\Metier;
+
+
 /**
  *
  * Représente les médicaments
@@ -12,7 +16,6 @@
   *  Ensemble des attributs concernant la table Medicament
   *
   */
-
 class Medicament
 {
     private $numero;

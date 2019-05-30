@@ -1,11 +1,13 @@
 <?php
 
-require_once "../Metier/Effets.php";
-require_once "../models/modelMedicaments.php";
+
+namespace App\Models;
+
+use App\Metier\Effets;
+use App\Models\Medicament;
 
 
-
-class GetEffets
+class Effet
 {
 
     /**
@@ -13,7 +15,7 @@ class GetEffets
      * @param string $numero identifiant du médicament
      * @return array les effets
      */
-    function GetEffets($numero)
+    public static function GetEffets($numero)
     {
 
         $wsdl="http://localhost:8080/WebService1.asmx?WSDL";

@@ -1,6 +1,9 @@
 <?php
 
 
+namespace App\Metier;
+
+
 /**
  * 
  * Représente les contres-Indications de chaque Médicament
@@ -23,7 +26,7 @@ class Contre_Indications
 
 
     /**
-     * Permet d'instancier une activité complémentaire
+     * Permet d'instancier une contre-indication
      * @param string $libelle son libellé
      * @param string $description sa description
      */

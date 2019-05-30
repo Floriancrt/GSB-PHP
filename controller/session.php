@@ -2,13 +2,14 @@
 
 
 
+use App\Models\Authentification;
 
-require_once '../models/modelAuthentification.php';
 
-$login = $_POST["login"];
-$mdp = $_POST["mdp"];
+$login = $_POST['login'];
+$mdp = $_POST['mdp'];
 
-$role = GetUtilisateurs($login,$mdp);
+$role = Authentification::GetUtilisateurs($login,$mdp);
+
 
 if($role == 'P')
 {

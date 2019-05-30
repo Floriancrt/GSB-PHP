@@ -1,6 +1,10 @@
 <?php
 
 
+
+namespace App\Metier;
+
+
 /**
  * 
  * Représente les activités complémentaires
@@ -25,7 +29,12 @@ class ActivitesC extends Activite
 
 
     /**
-     * Permet d'instancier une activité complémentaire.
+     * Permet d'instancier une activité complémentaire
+     * @param string $budget son budget
+     * @param string $theme son theme
+     * @param string $salle sa salle
+     * @param string $etat son etat
+     * @param string $colPraticiens les praticiens concernés
      */
     public function __construct()
     {

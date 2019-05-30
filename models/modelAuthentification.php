@@ -1,6 +1,7 @@
 <?php
 
 
+namespace App\Models;
 
 class Authentification
 {
@@ -11,7 +12,7 @@ class Authentification
      * @param string $mdp mot de passe de l'utilisateur
      * @return array les participants
      */
-    function GetUtilisateurs($login,$mdp)
+    public static function GetUtilisateurs($login,$mdp)
     {
 
         $wsdl="http://localhost:8080/WebService1.asmx?WSDL";

@@ -1,18 +1,20 @@
 <?php
 
-require_once "../Metier/Effets.php";
-require_once "../Metier/Contre_Indications.php";
-require_once "../Metier/Composants.php";
 
-require_once "../models/modelEffets.php";
-require_once "../models/modelContreIndication.php";
-require_once "../models/modelComposants.php";
+use App\Metier\Effets;
+use App\Metier\Contre_Indications;
+use App\Metier\Composants;
 
-$IdMedicament = $_GET["code"];
+use App\Models\Effet;
+use App\Models\ContreIndicaction;
+use App\Models\Composant;
 
-$effets = GetEffets($IdMedicament);
-$contreIndication = GetContreIndication($IdMedicament);
-$composant = GetComposants($IdMedicament);
+
+$IdMedicament = $_GET['code'];
+
+$effets = Effet::GetEffets($IdMedicament);
+$contreIndication = ContreIndication::GetContreIndication($IdMedicament);
+$composant = Composant::GetComposants($IdMedicament);
 
 
 require_once "../views/details_medicaments_view.php";

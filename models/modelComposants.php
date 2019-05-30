@@ -1,6 +1,10 @@
 <?php
 
-class Composants
+
+namespace App\Models;
+
+
+class Composant
 {
     /**
      * Permet d'obtenir les composants d'un médicament
