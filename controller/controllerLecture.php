@@ -2,13 +2,9 @@
 
 session_start();
 
+require_once "../models/modelMedicaments.php";
 
-use App\Models\Medicament;
-
-
-$medicaments = Medicament::afficherMedicaments();
-
-
+$medicaments = GetMedicaments();
 
 require_once "../views/accueil_medicaments.php";
 

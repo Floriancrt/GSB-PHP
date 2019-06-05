@@ -1,11 +1,17 @@
 <?php
 
+
+
 session_start();
+if(!isset($_SESSION["login"]))header("Location: ./connexion.php");
 
-use App\Metier\Medicament;
+require_once "../models/modelMedicaments.php";
+require_once "../models/modelActiviteComp.php";
 
-$medicaments = afficherMedicaments();
+$medicaments = GetMedicaments();
+$activitescomp = afficherAC();
+
+
 
 require_once "../views/medicaments_view.php";
 
-?>

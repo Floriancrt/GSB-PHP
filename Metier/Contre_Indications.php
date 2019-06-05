@@ -1,9 +1,6 @@
 <?php
 
 
-namespace App\Metier;
-
-
 /**
  * 
  * Représente les contres-Indications de chaque Médicament
@@ -21,34 +18,29 @@ namespace App\Metier;
 class Contre_Indications
 {
 
-    private $libelle;
-    private $description;
+    private $LibelleContreIndication;
+    private $DescriptionContreIndication;
 
 
-    /**
-     * Permet d'instancier une contre-indication
-     * @param string $libelle son libellé
-     * @param string $description sa description
-     */
-    public function __construct($libelle,$description)
+    public function __construct($LibelleContreIndication,$DescriptionContreIndication)
     {
         
-        $this->libelle = $libelle;
-        $this->description = $description;
+        $this->libelleContreIndication = $LibelleContreIndication;
+        $this->descriptionContreIndication = $DescriptionContreIndication;
 
     }
 
 
-    public function getLibelle()
+    public function getLibelleContreIndication()
     {
 
-        return $this->libelle;
+        return $this->libelleContreIndication;
     }
 
-    public function getDescription()
+    public function getDescriptionContreIndication()
     {
 
-        return $this->description;
+        return $this->descriptionContreIndication;
     }
     
 

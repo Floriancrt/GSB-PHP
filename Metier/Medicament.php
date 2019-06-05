@@ -1,10 +1,6 @@
 <?php
 
 
-
-namespace App\Metier;
-
-
 /**
  *
  * Représente les médicaments
@@ -16,18 +12,14 @@ namespace App\Metier;
   *  Ensemble des attributs concernant la table Medicament
   *
   */
+
 class Medicament
 {
     private $numero;
     private $libelle;
     private $famille;
 
-    /**
-     * Permet d'instancier un médicament
-     * @param string $numero son numero
-     * @param string $libelle son libelle
-     * @param string $famille sa famille
-     */
+
     public function __construct($numero, $libelle,$famille)
     {
         $this->numero = $numero;

@@ -1,28 +1,36 @@
 <?php
 
 
+session_start();
 
-use App\Models\Authentification;
+require_once '../models/modelAuthentification.php';
 
+$login = $_POST["login"];
+$mdp = $_POST["mdp"];
 
-$login = $_POST['login'];
-$mdp = $_POST['mdp'];
+$role = GetUtilisateurs($login,$mdp);
 
-$role = Authentification::GetUtilisateurs($login,$mdp);
+switch($role)
+{  
+    case 'P':
 
+        $_SESSION["login"]= $login;
+        $_SESSION["mdp"]=$mdp;
+        header('Location: ./controllerMedicaments.php');
+        break;
+    
+    case 'R':
 
-if($role == 'P')
-{
-    $_SESSION["login"]= $login;
-    $_SESSION["mdp"]=$mdp;
-    header('Location: ./controllerMedicaments.php');
-    session_start();
+        $_SESSION["login"]= $login;
+        $_SESSION["mdp"]=$mdp;
+        header('Location: ./controllerAC.php');
+        break;
+
+    default: 
+    
+        header('Location: ./connexion.php');
 
 }
-else
-{
-    header('Location: ./connexion.php');
 
-}
 
 ?>

@@ -1,17 +1,15 @@
 <?php
 
 
+require_once "../Metier/ActivitesC.php";
 
-
-class ActivitesComp
-{
 
     /**
      * Permet d'obtenir les participants d'une activité complémentaire.
      * @param string $id identifiant de l'activité complémentaire
      * @return array les participants
      */
-    public static function getParticipants($id)
+    function getParticipants($id)
     {
 
     // service web
@@ -21,6 +19,7 @@ class ActivitesComp
     $parametres = array( 'id' => $id );
     $res = $client->GetParticipants($parametres);
     $res = $res->GetParticipantsResult;
+    
     
     if( count((array)$res) > 0)
     {
@@ -34,44 +33,38 @@ class ActivitesComp
      * Permet d'obtenir les activités complémentaires.
      * @return array les participants
      */
-    public static function afficherAC($numero)
+    function afficherAC()
     {
         $wsdl = "http://localhost:8080/WebService1.asmx?WSDL";
 
         $client = new SoapClient($wsdl);
+
         $res = $client->afficherAC();
         $res = $res->afficherACResult;
-        $ac = array();
-        $ensAC = array();
+        $res = $res->string;
+       
     
-        if( count((array) $res) > 0 )
-        {
-            $res = $res->string;
-        
-            if(is_array($res))
+        $activitescomps = array();
+        $ensactivitescomp = array();
+
+            if(count((array)$res) == 1)
             {
-                $nbRes = count($res);
-                for($i = 0; $i < $nbRes; $i++)
+                $activitescomps[] = explode("|", $res);
+                $activitescomp = new ActivitesC($activitescomps[0][0], $activitescomps[0][1], $activitescomps[0][2],$activitescomps[0][3],$activitescomps[0][4],$activitescomps[0][5],$activitescomps[0][6],$activitescomps[0][7]);        
+                $ensactivitescomp[$activitescomp->getIdActivite()] = $activitescomp;
+            }
+            
+            elseif(count((array)$res) > 1)
+            {
+                for($i = 0; $i < count($res); $i++)
                 {
-                
-                    $ac[] = explode('|', $res[$i]);
+                    $activitescomps[] = explode("|", $res[$i]);
+                    $activitescomp = new ActivitesC($activitescomps[$i][0], $activitescomps[$i][1], $activitescomps[$i][2],$activitescomps[$i][3],$activitescomps[$i][4],$activitescomps[$i][5],$activitescomps[$i][6],$activitescomps[$i][7]);
+                    $ensactivitescomp[$activitescomp->getIdActivite()] = $activitescomp;
                 }
             }
-            else
-            {
-                $ac[] = explode('|', $res); // idem
-            }
-            $nbRes = count($ac);
             
-            
-            for($i = 0; $i < $nbRes; $i++)
-            {
-                $id = $ac[$i][0]; 
-                $colPraticiens = self::getParticipants($id);
-                $ensAC[$id] = new ActivitesC($ac[$i][0], $ac[$i][1], $ac[$i][2], $ac[$i][3], $ac[$i][4], $ac[$i][5], $ac[$i][6], $ac[$i][7], $colPraticiens);
-            }
-        }
-        return $ensAC;
+            return $ensactivitescomp;
 
 
     }
@@ -81,7 +74,7 @@ class ActivitesComp
 
 
 
-}
+
 
 
 

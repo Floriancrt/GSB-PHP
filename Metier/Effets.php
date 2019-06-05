@@ -1,9 +1,6 @@
 <?php
 
 
-use App\Metier;
-
-
 /**
  * 
  * Représente les Effets de chaque Médicament
@@ -16,33 +13,31 @@ use App\Metier;
   * Ensemble des attributs concernant la table Effets
   * 
   */
+
+
  class Effets
  {
 
-    private $libelle;
-    private $description;
 
-    /**
-     * Permet d'instancier un effet
-     * @param string $libelle son libellé
-     * @param string $description sa description
-     */
+    private $libelleEffet;
+    private $descriptionEffet;
+
     public function __construct($libelleEffet,$descriptionEffet)
     {
-        $this->libelle = $libelle;
-        $this->description = $description;
+        $this->libelleEffet = $libelleEffet;
+        $this->descriptionEffet = $descriptionEffet;
         
     }
     
 
-    public function getLibelle()
+    public function getLibelleEffet()
     {
-        return $this->libelle;
+        return $this->libelleEffet;
     }
 
-    public function getDescription()
+    public function getDescriptionEffet()
     {
-        return $this->description;
+        return $this->descriptionEffet;
     }
 
 

@@ -1,10 +1,6 @@
 <?php
 
 
-
-namespace App\Metier;
-
-
 /**
  * 
  * Représente les composants de chaque Médicament
@@ -23,39 +19,26 @@ class Composants
 {
 
     
-    private $libelle;
+    private $LibelleComposant;
     private $Quantite;
 
-    /**
-     * Permet d'instancier un composant
-     * @param string $libelle son libellé
-     * @param string $quantite sa quantité
-     */
-    public function __construct($libelle,$quantite)
+
+    public function __construct($LibelleComposant,$Quantite)
     {
 
-        
-        $this->libelle = $libelle;
+        $this->LibelleComposant = $LibelleComposant;
         $this->Quantite = $Quantite;
     }
 
-    /**
-     * Permet d'obtenir la quantité d'un composant dans un médicament
-     */
-    
     public function getQuantite()
     {
-        return $this->quantite;
+        return $this->Quantite;
     }
 
-    /**
-     * Permet d'obtenir le libellé d'un composant
-     */
-
-    public function getLibelle()
+    public function getLibelleComposant()
     {
 
-        return $this->libelle;
+        return $this->LibelleComposant;
     }
 
     

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../views/css/app.css">
     <link rel="stylesheet" type="text/css" href="../views/css/bootstrap.min.css">
-    <link rel="shortcut icon" type="image/png" href="../views/images/gsb-favicon.png"/>
     <script src="../views/js/jquery.min.js"></script>
     <script src="../views/js/bootstrap.min.js"></script>
     </head>
@@ -36,24 +35,12 @@
 
   </script>
 
-  <script>
-
-    function Redirect()
-    {
-      if(isset($_SESSION["login"]))header("Location: ./controllerMedicaments.php");
-      else
-      {
-        require_once "./controllerLecture.php";
-      }
-    }
-  
-  </script>
 
 <p class="h1" id="title_listeEffets" style="display:none;">Détails du médicament</p>
 <div class="menu"></div>
 <div class="col-lg-4">
   <button class="bouton btn-effets" id="btn-effets">Effets</button>
-  <button class="btn_return" onclick="Redirect()"><span>Retour</span></button>
+  <button class="btn_return" onclick="window.location.href='../controller/controllerMedicaments.php'"><span>Retour</span></button>
 </div>
 <div class="col-lg-4">
 <button class="bouton btn-contre_indications" id="btn-contre_indications">Contre-Indications</button>
@@ -80,7 +67,7 @@
               <tbody>
                 <?php foreach($effets as $key =>$value): ?>
                   <tr>
-                    <th scope="row" class="tab_effet"><?php echo $value->getLibelle(); ?></th>
+                    <th scope="row" class="tab_effet"><?php echo $value->getLibelleEffet(); ?></th>
                   </tr>
                 <?php endforeach; ?>
               </tbody>
@@ -113,7 +100,7 @@
               <tbody>
               <?php foreach($contreIndication as $key =>$value): ?>
                 <tr>
-                  <th scope="row" class="tab_effet"><?php echo $value->getLibelle(); ?></th>
+                  <th scope="row" class="tab_effet"><?php echo $value->getLibelleContreIndication(); ?></th>
                 </tr>
               <?php endforeach; ?>
               </tbody>
@@ -147,7 +134,7 @@
               <tbody>
               <?php foreach($composant as $key =>$value): ?>
                 <tr>
-                  <th scope="row" class="tab_effet"><?php echo $value->getLibelle(); ?></th>
+                  <th scope="row" class="tab_effet"><?php echo $value->getLibelleComposant(); ?></th>
                   <th scope="row" class="tab_effet"><?php echo $value->getQuantite(); ?></th>
                 </tr>
               <?php endforeach; ?>

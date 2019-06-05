@@ -28,6 +28,12 @@
       });
     });
 
+    $(document).ready(function(){
+      $("#btn_ajout_ac").click(function(){
+        $("#Modal-add-AC").modal();
+      });
+    });
+
     $(document).ready(function(){	
 	    $('#logo').fadeIn(3500);
       });
@@ -98,7 +104,6 @@
               <th scope="col">Numéro</th>
               <th scope="col">Libellé</th>
               <th scope="col">Famille</th>
-              <th scope="col" id="mod_tab_th"></th>
             </thead>
             <?php foreach($activitescomp as $key => $value): ?>
                 <form action="aiguillage" method="POST">     
@@ -106,8 +111,7 @@
                         <tr>
                             <td><?php echo $value->getTheme(); ?></td>
                             <td><?php echo $value->getDate(); ?></td>
-                            <td><?php echo $value->getSalle(); ?></td>
-                            <td><button type="submit" name="AjoutActivite" value="inscription" class="details_tab_button" onclick="return confirm('Confirmez-vous ?');"><span class="glyphicon glyphicon-plus"></span> Je participe</button></td>                            
+                            <td><?php echo $value->getSalle(); ?></td>                           
                         </tr>
                     </tbody>
                 </form>
@@ -120,11 +124,34 @@
       </div>
     </div>
   </div>
+
+
+  <div class="modal fade" id="Modal-add-AC" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal Activites Complémentaires-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="modal_title_med">Ajouter une activité</h4>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="aiguillageMedicaments.php">
+            <input class="form-control" type="text" name="nni" placeholder="Salle">
+            <input class="form-control" type="text" name="nni" placeholder="Etat">    
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
     
   <div class="menu"></div>
   <div class="container-accueil">
     <div class="col-lg-4" style="z-index:999;">
-        <button class="bouton linear-wipe-medicament" id="btn-medicament" >Médicaments</button>
+        <button class="bouton linear-wipe-medicament" id="btn-medicament">Médicaments</button>
         <button class="btn_return" id="btn_connexion"  onclick="window.location.href='../controller/deconnexion.php'"><span>Déconnexion</span></button>
     </div>
     <div class="col-lg-4">
@@ -132,8 +159,8 @@
     </div>
     <div class="col-lg-4">
         <button class="bouton linear-wipe-activites" id="btn-activites">Activités</button>
+        <button class="btn_AC btn_ajout_ac" id="btn_ajout_ac">Ajouter une activité</button>
     </div>
   </div>
-
 </body>
 </html>
