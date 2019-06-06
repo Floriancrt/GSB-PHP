@@ -11,6 +11,26 @@
 
     </head>
 <body>
+<script type="text/javascript">
+
+$(document).ready(function(){
+ 
+ $('.show-password').click(function() {
+   if($(this).prev('input').prop('type') == 'password') {
+     //Si c'est un input type password
+     $(this).prev('input').prop('type','text');
+     $(this).text('cacher');
+   } else {
+     //Sinon
+     $(this).prev('input').prop('type','password');
+     $(this).text('afficher');
+   }
+ });
+
+});
+
+</script>
+
   <title>Connexion</title>
 
 
@@ -37,8 +57,9 @@
             <input type="text" name="login" />
           </div>
           <div class="form-group">
-            <label for="username" class="form-label">Mot de passe</label>
+            <label for="password" class="form-label">Mot de passe</label>
             <input type="password" name="mdp" />
+            <span class="show-password">afficher</span>
           </div>
           <button type="submit" class="button_accueil" style="display: block; margin: 50px auto;">Se connecter</button>
         </form>

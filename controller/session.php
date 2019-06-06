@@ -19,12 +19,19 @@ switch($role)
         header('Location: ./controllerMedicaments.php');
         break;
     
-    case 'R':
+    case 'V':
 
         $_SESSION["login"]= $login;
         $_SESSION["mdp"]=$mdp;
         header('Location: ./controllerAC.php');
         break;
+
+    case 'R':
+
+        $_SESSION["login"]= $login;
+        $_SESSION["mdp"]=$mdp;
+        header('Location: ./controllerAC.php');
+
 
     default: 
     

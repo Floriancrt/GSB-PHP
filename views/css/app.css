@@ -25,6 +25,15 @@ html, body {
   }
 
 
+  .show-password {
+    font-size: 9px;
+    text-transform: uppercase;
+    position: absolute;
+    cursor: pointer;
+    margin-left: -48px;
+  }
+
+
 .backLeft {
   position: absolute;
   left: 0;

@@ -11,6 +11,8 @@ $medicaments = GetMedicaments();
 $activitescomp = afficherAC();
 
 
+
+
 require_once "../views/medicaments_AC_view.php";
 
 ?>

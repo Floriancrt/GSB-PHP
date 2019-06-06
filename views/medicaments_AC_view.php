@@ -60,7 +60,8 @@
           <h4 class="modal-title" id="modal_title_med">Médicaments</h4>
         </div>
         <div class="modal-body">
-          
+        
+          <form method="POST" action="aiguillageMedicaments.php">          
           <table class="table table-hover">
             <thead>
               <th scope="col">Numéro</th>
@@ -68,9 +69,8 @@
               <th scope="col">Famille</th>
               <th scope="col" id="mod_tab_th"></th>
             </thead>
-            <?php foreach($medicaments as $key =>$value): ?>
-              <form method="POST" action="aiguillageMedicaments.php">
                 <tbody>
+                <?php foreach($medicaments as $key =>$value): ?>
                     <tr>
                       <input type="hidden" name="ID_Medicament" value="<?php echo $value->getNumero(); ?>">
                       <td><?= $value->getNumero(); ?></td>
@@ -78,9 +78,10 @@
                       <td><?= $value->getFamille(); ?></td>
                       <td><input class="details_tab_button" type="submit" name="detailsAction" value="Details"></td>
                     </tr>
+                    <?php endforeach; ?>   
                 </tbody>    
               </form>
-            <?php endforeach; ?>     
+            
           </table>
         </div>
         <div class="modal-footer">
@@ -99,19 +100,20 @@
           <h4 class="modal-title">Activités</h4>
         </div>
         <div class="modal-body">  
+
         <table class="table table-hover">
             <thead>
-              <th scope="col">Numéro</th>
-              <th scope="col">Libellé</th>
-              <th scope="col">Famille</th>
+              <th scope="col">Thème</th>
+              <th scope="col">Date</th>
+              <th scope="col">Salle</th>
             </thead>
-            <?php foreach($activitescomp as $key => $value): ?>
-                <form action="aiguillage" method="POST">     
+            <?php foreach($activitescomp as $key => $value): ?> 
+                <form action="aiguillageMedicaments.php" method="POST"> 
                     <tbody>
                         <tr>
-                            <td><?php echo $value->getTheme(); ?></td>
-                            <td><?php echo $value->getDate(); ?></td>
-                            <td><?php echo $value->getSalle(); ?></td>                           
+                        <td><?php echo $value->getTheme(); ?></td>
+                        <td><?php echo $value->getDate(); ?></td> 
+                        <td><?php echo $value->getSalle(); ?></td>                         
                         </tr>
                     </tbody>
                 </form>
@@ -136,8 +138,33 @@
         </div>
         <div class="modal-body">
           <form method="POST" action="aiguillageMedicaments.php">
-            <input class="form-control" type="text" name="nni" placeholder="Salle">
-            <input class="form-control" type="text" name="nni" placeholder="Etat">    
+            <div class="form-group">
+              <input class="form-control" type="text" name="nni" placeholder="Thème">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="nni" placeholder="Salle">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="nni" placeholder="Budget">
+            </div> 
+            
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultCheckedDisabled2" name="disabledGroupExample" checked disabled>
+              <label class="custom-control-label" for="defaultCheckedDisabled2">Emis</label>
+            </div>
+           
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultCheckedDisabled2" name="disabledGroupExample" disabled>
+              <label class="custom-control-label" for="defaultCheckedDisabled2">En attente de décision</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultCheckedDisabled2" name="disabledGroupExample" disabled>
+              <label class="custom-control-label" for="defaultCheckedDisabled2">Refusé</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultCheckedDisabled2" name="disabledGroupExample" disabled>
+              <label class="custom-control-label" for="defaultCheckedDisabled2">Accordé</label>
+            </div>  
           </form>
         </div>
         <div class="modal-footer">
