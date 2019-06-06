@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../views/css/app.css">
     <link rel="stylesheet" type="text/css" href="../views/css/bootstrap.min.css">
-    <link rel="shortcut icon" type="image/png" href="../views/images/gsb-favicon.png"/>
+    <link rel="shortcut icon" href="../views/images/gsb-favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../views/images/gsb-favicon.ico" type="image/x-icon">
     <script src="../views/js/jquery.min.js"></script>
     <script src="../views/js/bootstrap.min.js"></script>
 

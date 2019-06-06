@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../views/css/app.css">
     <link rel="stylesheet" type="text/css" href="../views/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../views/images/gsb-favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../views/images/gsb-favicon.ico" type="image/x-icon">
     <script src="../views/js/jquery.min.js"></script>
     <script src="../views/js/bootstrap.min.js"></script>
     </head>
@@ -39,14 +41,14 @@
 <p class="h1" id="title_listeEffets" style="display:none;">Détails du médicament</p>
 <div class="menu"></div>
 <div class="col-lg-4">
-  <button class="bouton btn-effets" id="btn-effets">Effets</button>
-  <button class="btn_return" onclick="window.location.href='../controller/controllerMedicaments.php'"><span>Retour</span></button>
+  <button class="boutonbtn btn-effets" id="btn-effets">Effets</button>
+  <button class="btn_return" onclick="window.location.href='../controller/session.php'"><span>Retour</span></button>
 </div>
 <div class="col-lg-4">
-<button class="bouton btn-contre_indications" id="btn-contre_indications">Contre-Indications</button>
+<button class="boutonbtn btn-contre_indications" id="btn-contre_indications">Contre-Indications</button>
 </div>
 <div class="col-lg-4">
-<button class="bouton btn-composant" id="btn-composant">Composants</button>
+<button class="boutonbtn btn-composant" id="btn-composant">Composants</button>
 
 
 <div class="modal fade" id="Modal-Effets" role="dialog">

@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../views/css/app.css">
     <link rel="stylesheet" type="text/css" href="../views/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../views/images/gsb-favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../views/images/gsb-favicon.ico" type="image/x-icon">
     <script src="../views/js/jquery.min.js"></script>
     <script src="../views/js/bootstrap.min.js"></script>
 </head>
@@ -147,7 +149,12 @@
             <div class="form-group">
               <input class="form-control" type="text" name="nni" placeholder="Budget">
             </div> 
-            
+            <div class="form-group">
+              <input class="form-control" type="text" name="nni" placeholder="ID Responsable">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="nni" placeholder="ID Praticien">
+            </div>
             <div class="custom-control custom-radio">
               <input type="radio" class="custom-control-input" id="defaultCheckedDisabled2" name="disabledGroupExample" checked disabled>
               <label class="custom-control-label" for="defaultCheckedDisabled2">Emis</label>
