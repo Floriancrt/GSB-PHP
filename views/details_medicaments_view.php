@@ -42,7 +42,7 @@
 <div class="menu"></div>
 <div class="col-lg-4">
   <button class="boutonbtn btn-effets" id="btn-effets">Effets</button>
-  <button class="btn_return" onclick="window.location.href='../controller/session.php'"><span>Retour</span></button>
+  <button class="btn_return" onclick="history.go(-1)"><span>Retour</span></button>
 </div>
 <div class="col-lg-4">
 <button class="boutonbtn btn-contre_indications" id="btn-contre_indications">Contre-Indications</button>
